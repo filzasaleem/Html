@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Html
 {
@@ -15,6 +11,14 @@ namespace Html
         public Title(string title)
         {
             this.Add(new Text(title));
+        }
+        public string Lang { get; set; }
+        protected override string FormatAttributes()
+        {
+            string result = base.FormatAttributes();
+            if (Lang != null)
+                result = result + " lang =\"" + this.Lang + "\"";
+            return result;
         }
     }
 }

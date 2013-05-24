@@ -15,5 +15,16 @@ namespace Html
         {
             this.Add(new Text(content));
         }
+        public string Class { get; set; }
+        public string Title { get; set; }
+        protected override string FormatAttributes()
+        {
+            string result = base.FormatAttributes();
+            if (Class != null)
+                result = result + " class =\"" + this.Class + "\"";
+            if (Title != null)
+                result = result + " title =\"" + this.Title + "\"";
+            return result;
+        }
     }
 }

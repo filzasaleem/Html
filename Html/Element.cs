@@ -10,7 +10,9 @@ namespace Html
         Collection.IList<Node> childNodes = new Collection.List<Node>();
 
         protected abstract string Name { get; }
-
+        public string Id { get; set; }
+        public string Dir { get; set; }
+        public string Style { get; set; }
 
 
         public void Add(Node item)
@@ -19,7 +21,14 @@ namespace Html
         }
         protected virtual string FormatAttributes()
         {
-            return "";
+            string result = null;;
+            if (Id != null)
+                result = " id = \"" + this.Id + "\"" ;
+            if (Dir != null)
+                result = result + " dir=\"" + this.Id + "\"";
+            if (Style != null)
+                result = result + " style = \"" + this.Style + "\"";
+            return result;
         }
         public override string Format(int indent)
         {

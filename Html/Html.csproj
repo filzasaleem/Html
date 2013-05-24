@@ -50,8 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attribute.cs" />
     <Compile Include="Body.cs" />
+    <Compile Include="Button.cs" />
     <Compile Include="Document.cs" />
     <Compile Include="Element.cs" />
     <Compile Include="Head.cs" />
@@ -60,6 +60,10 @@
     <Compile Include="Node.cs" />
     <Compile Include="Paragraph.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Table.cs" />
+    <Compile Include="TableColumn.cs" />
+    <Compile Include="TableHead.cs" />
+    <Compile Include="TableRow.cs" />
     <Compile Include="Text.cs" />
     <Compile Include="Title.cs" />
   </ItemGroup>

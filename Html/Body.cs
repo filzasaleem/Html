@@ -7,10 +7,18 @@ namespace Html
         Element 
     {
         protected override string Name { get {return "body"; } }
-        //public override string Attribute(string name, string value)
-        //{
-        //    return name + " = " + value;
-        //}
+        public string BgColor { get; set; }
+        public string Title { get; set; }
+        protected override string FormatAttributes()
+        {
+            string result = base.FormatAttributes();
+            if (BgColor != null)
+                result = result + " bgcolor =\"" + this.BgColor + "\"";
+            if (Title != null)
+                result = result + " title =\"" + this.Title + "\"";
+            return result;
+       
+        }
       
     }
 }

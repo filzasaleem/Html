@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Html
 {
@@ -10,6 +6,14 @@ namespace Html
         Element 
     {
         protected override string Name { get { return "head"; } }
+        public string Lang { get; set; }
+        protected override string FormatAttributes()
+        {
+            string result = base.FormatAttributes();
+            if (Lang != null)
+                result = result + " lang =\"" + this.Lang + "\"";
+            return result;
+        }
         
     }
 }

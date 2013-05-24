@@ -15,11 +15,18 @@ namespace Html
         {
             this.Add(new Text(content));
         }
-        //public override string Attribute(string name, string value)
-        //{
-        //    return name + " = " + value;
-        //}
-    }
+        public string Align { get; set; }
+        public string Title { get; set; }
+        protected override string FormatAttributes()
+        {
+            string result =  base.FormatAttributes();
+            if (Align != null)
+                result = result + " align =\"" + this.Align + "\"";
+            if (Title != null)
+                result = result + " title =\"" + this.Title + "\"";
+            return result;
+        }
+     }
     
 
 }
