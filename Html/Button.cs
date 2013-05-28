@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Html
 {
@@ -12,28 +8,24 @@ namespace Html
         protected override string TagName{ get { return "Button"; } }
          public Button()
         {
-
+            this.NoLineBreaks = true;
         }
-        public Button(string content)
+        public Button(string content) :
+            this()
         {
             this.Add(new Text(content));
         }
-        public string Nameb { get; set; }
+        public string Name { get; set; }
         public string Value { get; set; }
         public string Type { get; set; }
         public string Onclick { get; set; }
         protected override string FormatAttributes()
         {
-            string result = base.FormatAttributes();
-            if (Nameb != null)
-                result = result + " name =\"" + this.Nameb + "\"";
-            if (Value  != null)
-                result = result + " value =\"" + this.Value + "\"";
-            if (Type != null)
-                result = result + " type =\"" + this.Type + "\"";
-            if (Onclick != null)
-                result = result + " onclick =\"" + this.Onclick + "\"";
-            return result;
+            return
+                 this.FormatAttribute("name", this.Name) +
+                 this.FormatAttribute("value", this.Value) +
+                 this.FormatAttribute("type", this.Type) +
+                 this.FormatAttribute("onclick", this.Onclick);
         }
     }
 }

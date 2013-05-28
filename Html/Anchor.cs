@@ -7,16 +7,21 @@ namespace Html
     {
         protected override string TagName { get { return "a"; } }
         public string Destination { get; set; }
+        #region Constructor
         public Anchor()
         {
-
         }
         public Anchor(string content)
         {
             this.Add(new Text(content));
         }
-
-        protected override string FormatAttributes()
+         public Anchor(params Node[] nodes) :
+            this()
+        {
+            this.Add(nodes);
+        }
+        #endregion
+         protected override string FormatAttributes()
         {
             string result = base.FormatAttributes();
             if(this.Destination != null)

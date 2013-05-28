@@ -50,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abbreviation.cs" />
+    <Compile Include="Address.cs" />
     <Compile Include="BlockQuote.cs" />
     <Compile Include="Body.cs" />
     <Compile Include="Bold.cs" />

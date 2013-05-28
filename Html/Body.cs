@@ -7,11 +7,10 @@ namespace Html
         Element 
     {
         protected override string TagName { get {return "body"; } }
-
         protected override string FormatAttributes()
         {
-            string result = base.FormatAttributes();
-            return result;
+            return base.FormatAttributes();
+ ;
         }
       
     }

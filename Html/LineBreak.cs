@@ -6,5 +6,9 @@ namespace Html
         Element
     {
         protected override string TagName { get { return "br"; } }
+        public LineBreak()
+        {
+            this.NoLineBreaks = true;
+        }
     }
 }

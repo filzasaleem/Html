@@ -27,14 +27,14 @@ namespace Html.Test
             document.Body.Add(new Html.LineBreak());
             document.Body.Add(new Html.LineBreak());
             //document.Body.Add(new Html.Table.Add(new Html.TableRow.Add(new Html.TableColumn("january"), new Html.TableColumn("100"))));
-            Html.Table table = new Table() { Bgcolor = "yellow", Border = "5" };
+            Html.Table table = new Table() { Border = "5" };
             Html.TableRow tablerow = new TableRow();
             tablerow.Add(new Html.TableData("january"));
             tablerow.Add(new Html.TableData("100"));
             table.Add(tablerow);
             document.Body.Add(table);
             document.Body.Add(new Html.LineBreak());
-            document.Body.Add(new Html.Image() { Src = "smileys_Laugh.jpg", Height = "100", Width = "100", Alt = "smiley" });
+            document.Body.Add(new Html.Image() { Source = "smileys_Laugh.jpg", Height = "100", Width = "100", Alternate = "smiley" });
             document.Body.Add(new Html.LineBreak());
             document.Body.Add(new Html.Paragraph("Here is a quote from WWF's website."));
             document.Body.Add(new Html.BlockQuote("For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization,  WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally. ") { ContentEditable = true });
@@ -45,6 +45,8 @@ namespace Html.Test
             para.Add(new Html.Bold("this is bold text"));
             document.Body.Add(para);
             document.Body.Add(new Html.Paragraph("this is simple text and ", new Html.Bold("this is bold text")));
+            document.Body.Add(new Html.Paragraph("the ", new Html.Abbreviation("WHO ") { Title = "world health organization " }, "was founded in 1948."));
+           document.Body.Add(new Html.Address("IMINT image Intelligence AB ", new Html.LineBreak(), "Dag Hammarskjolds vag 10C ", new Html.LineBreak(), "751 83 Uppsala, Sweden "));
             string data = document.ToString();
 
             document.Save("test.html");

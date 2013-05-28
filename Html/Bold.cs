@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Html
 {
@@ -10,12 +6,19 @@ namespace Html
         Element 
     {
         protected override string TagName { get { return "b"; } }
+        #region Constructor
         public Bold()
         {
         }
-        public Bold(string content)
+        public Bold(Node content)
         {
-            this.Add(new Text(content));
+            this.Add(content);
         }
+         public Bold(params Node[] nodes) :
+            this()
+        {
+            this.Add(nodes);
+        }
+        #endregion
     }
 }

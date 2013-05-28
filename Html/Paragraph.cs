@@ -6,30 +6,22 @@ namespace Html
     public class Paragraph :
         Element 
     {
-        protected override string TagName { get { return "P"; } }
+        protected override string TagName { get { return "p"; } }
+        #region Constructors
         public Paragraph()
         {
             this.NoLineBreaks = true;
         }
-        public Paragraph(string content) :
+        public Paragraph(Node content) :
             this()
         {
-            this.Add(new Text(content));
+            this.Add(content);
         }
         public Paragraph(params Node[] nodes) :
             this()
         {
             this.Add(nodes);
         }
-        public string Align { get; set; }
-        protected override string FormatAttributes()
-        {
-            string result =  base.FormatAttributes();
-            if (Align != null)
-                result = result + " align =\"" + this.Align + "\"";
-            return result;
-        }
-     }
-    
-
+        #endregion
+    }
 }

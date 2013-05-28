@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Html
 {
@@ -11,19 +7,25 @@ namespace Html
     {
         protected override string TagName { get { return "q"; } }
         public string Cite { get; set; }
+        #region Constructor
         public Quote()
         {
+            this.NoLineBreaks = true;
         }
-        public Quote(string content)
+        public Quote(Node content) :
+            this()
         {
-            this.Add(new Text(content));
+            this.Add(content);
         }
+        public Quote(params Node[] nodes) :
+            this()
+        {
+            this.Add(nodes);
+        }
+        #endregion
         protected override string FormatAttributes()
         {
-            string result = base.FormatAttributes();
-            if (Cite != null)
-                result = result + " cite= \"" + this.Cite + "\"";
-            return result;
+            return this.FormatAttribute("cite", this.Cite);
         } 
     }
 }

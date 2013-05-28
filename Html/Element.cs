@@ -63,7 +63,9 @@ namespace Html
             result = indentation + "<" + this.TagName + this.FormatAttributes() + ">" + (this.NoLineBreaks || indent < 0 ? "" : "\n");
             if (!this.Empty)
                 result = result + this.Fold((node, accumulator) => accumulator + node.Format(this.NoLineBreaks || indent < 0 ? -1 : indent + 1), "") +
-                    (this.NoLineBreaks ? "" : indentation) + "</" + this.TagName + ">" + (indent < 0 ? "" : "\n");
+                    (this.NoLineBreaks ? "" : indentation) + "</" + this.TagName + ">";
+            if (indent >= 0)
+                result += "\n";
             return result;
         }
         System.Collections.Generic.IEnumerator<Node> System.Collections.Generic.IEnumerable<Node>.GetEnumerator()

@@ -13,9 +13,10 @@ namespace Html
         public string Cite { get; set; }
         public BlockQuote()
         {
-
+            this.NoLineBreaks = true;
         }
-        public BlockQuote(string content)
+        public BlockQuote(string content) :
+            this()
         {
             this.Add(new Text(content));
         }
