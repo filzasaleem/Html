@@ -5,7 +5,7 @@ namespace Html
     public class Table :
         Element 
     {
-        protected override string Name {get { return "table"; }}
+        protected override string TagName {get { return "table"; }}
         public string Bgcolor { get; set; }
         public string Border { get; set; }
         public string Cellpadding { get; set; }

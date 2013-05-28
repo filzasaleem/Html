@@ -9,7 +9,7 @@ namespace Html
     public class Button : 
         Element 
     {
-        protected override string Name{ get { return "Button"; } }
+        protected override string TagName{ get { return "Button"; } }
          public Button()
         {
 

@@ -15,7 +15,7 @@ namespace Html
         }
         public override string Format(int indent)
         {
-            return new string('\t', indent) + this.Value + "\n";
+            return indent < 0 ? this.Value : new string(' ', indent) + this.Value + "\n";
         }
     }
 }

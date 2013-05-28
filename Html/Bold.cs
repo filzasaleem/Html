@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace Html
 {
-    public class TableColumn :
-        Element
+    public class Bold :
+        Element 
     {
-        protected override string Name { get { return "td"; } }
-         public TableColumn()
+        protected override string TagName { get { return "b"; } }
+        public Bold()
         {
-
         }
-        public TableColumn(string content)
+        public Bold(string content)
         {
             this.Add(new Text(content));
         }

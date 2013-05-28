@@ -6,25 +6,15 @@ namespace Html
     public class Header1 :
         Element 
     {
-        protected override string Name{ get { return "h1"; } }
-         public Header1()
+        protected override string TagName{ get { return "h1"; } }
+        public Header1()
         {
-
+            this.NoLineBreaks = true;
         }
-        public Header1(string content)
+        public Header1(string content) :
+            this()
         {
             this.Add(new Text(content));
-        }
-        public string Class { get; set; }
-        public string Title { get; set; }
-        protected override string FormatAttributes()
-        {
-            string result = base.FormatAttributes();
-            if (Class != null)
-                result = result + " class =\"" + this.Class + "\"";
-            if (Title != null)
-                result = result + " title =\"" + this.Title + "\"";
-            return result;
         }
     }
 }

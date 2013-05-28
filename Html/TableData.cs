@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace Html
 {
-    public class TableHead : 
+    public class TableData :
         Element
     {
-        protected override string TagName{ get {return "th"; } }
-        public TableHead()
+        protected override string TagName { get { return "td"; } }
+        public TableData()
         {
             this.NoLineBreaks = true;
         }
-        public TableHead(string content)
+        public TableData(string content) :
+            this()
         {
             this.Add(new Text(content));
         }

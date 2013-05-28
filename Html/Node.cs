@@ -10,5 +10,9 @@ namespace Html
         {
             return this.Format(0);
         }
+        public static implicit operator Node(string value)
+        {
+            return new Text(value);
+        }
     }
 }

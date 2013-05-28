@@ -6,7 +6,7 @@ namespace Html
     public class TableRow :
         Element 
     {
-        protected override string Name { get { return "tr"; } }
+        protected override string TagName { get { return "tr"; } }
          public TableRow()
         {
 
