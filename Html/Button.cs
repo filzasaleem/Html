@@ -6,15 +6,22 @@ namespace Html
         Element 
     {
         protected override string TagName{ get { return "Button"; } }
-         public Button()
+        #region Constructor
+        public Button()
         {
             this.NoLineBreaks = true;
         }
-        public Button(string content) :
+        public Button(Node content) :
             this()
         {
-            this.Add(new Text(content));
+            this.Add(content);
         }
+        public Button(params Node[] nodes) :
+            this()
+        {
+            this.Add(nodes);
+        }
+        #endregion
         public string Name { get; set; }
         public string Value { get; set; }
         public string Type { get; set; }

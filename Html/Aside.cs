@@ -2,20 +2,21 @@
 
 namespace Html
 {
-    public class TableHead : 
+    public class Aside :
         Element
     {
-        protected override string TagName{ get {return "th"; } }
-        #region Constructor
-        public TableHead()
+        protected override string TagName { get { return "aside"; } }
+        #region Constructors
+        public Aside()
         {
             this.NoLineBreaks = true;
         }
-        public TableHead(Node content)
+        public Aside(Node content) :
+            this()
         {
             this.Add(content);
         }
-        public TableHead(params Node[] nodes) :
+        public Aside(params Node[] nodes) :
             this()
         {
             this.Add(nodes);

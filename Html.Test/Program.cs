@@ -12,7 +12,7 @@ namespace Html.Test
             //title.Add(new Html.Text("Page Title"));
             //document.Head.Add(title);
 
-
+            document.Body.Add(new Html.LineBreak());
             document.Head.Add(new Html.Title("Page Title"));
             document.Body.Add(new Html.Header1("header 1."));
             document.Body.Add(new Html.Paragraph("Paragraph 1.") { SpellCheck = true, ContentEditable = true });
@@ -46,7 +46,9 @@ namespace Html.Test
             document.Body.Add(para);
             document.Body.Add(new Html.Paragraph("this is simple text and ", new Html.Bold("this is bold text")));
             document.Body.Add(new Html.Paragraph("the ", new Html.Abbreviation("WHO ") { Title = "world health organization " }, "was founded in 1948."));
-           document.Body.Add(new Html.Address("IMINT image Intelligence AB ", new Html.LineBreak(), "Dag Hammarskjolds vag 10C ", new Html.LineBreak(), "751 83 Uppsala, Sweden "));
+            document.Body.Add(new Html.Address("IMINT image Intelligence AB ", new Html.LineBreak(), "Dag Hammarskjolds vag 10C ", new Html.LineBreak(), "751 83 Uppsala, Sweden "));
+            document.Body.Add(new Html.Paragraph("Mig och min familij besökt The Epcot förra sommar"));
+            document.Body.Add(new Html.Aside(new Html.Paragraph("The Epcot Center is a theme park in Disney World, Florida.")));
             string data = document.ToString();
 
             document.Save("test.html");

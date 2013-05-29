@@ -8,14 +8,21 @@ namespace Html
         Element
     {
         protected override string TagName { get { return "td"; } }
+        #region Constructor
         public TableData()
         {
             this.NoLineBreaks = true;
         }
-        public TableData(string content) :
+        public TableData(Node content) :
             this()
         {
-            this.Add(new Text(content));
+            this.Add(content);
         }
+        public TableData(params Node[] nodes) :
+            this()
+        {
+            this.Add(nodes);
+        }
+        #endregion
     }
 }

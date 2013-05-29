@@ -16,7 +16,7 @@ namespace Html
         {
             this.Add(content);
         }
-         public Address(params Node[] nodes) :
+        public Address(params Node[] nodes) :
             this()
         {
             this.Add(nodes);

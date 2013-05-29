@@ -11,17 +11,17 @@ namespace Html
         public Anchor()
         {
         }
-        public Anchor(string content)
+        public Anchor(Node content)
         {
-            this.Add(new Text(content));
+            this.Add(content);
         }
-         public Anchor(params Node[] nodes) :
+        public Anchor(params Node[] nodes) :
             this()
         {
             this.Add(nodes);
         }
         #endregion
-         protected override string FormatAttributes()
+        protected override string FormatAttributes()
         {
             string result = base.FormatAttributes();
             if(this.Destination != null)

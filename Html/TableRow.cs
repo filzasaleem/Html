@@ -6,13 +6,19 @@ namespace Html
         Element 
     {
         protected override string TagName { get { return "tr"; } }
-         public TableRow()
+        #region Constructor
+        public TableRow()
         {
-
         }
-        public TableRow(string content)
+        public TableRow(Node content)
         {
-            this.Add(new Text(content));
+            this.Add(content);
         }
+        public TableRow(params Node[] nodes) :
+            this()
+        {
+            this.Add(nodes);
+        }
+        #endregion
     }
 }

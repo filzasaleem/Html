@@ -16,7 +16,7 @@ namespace Html
         {
             this.Add((content));
         }
-         public Abbreviation(params Node[] nodes) :
+        public Abbreviation(params Node[] nodes) :
             this()
         {
             this.Add(nodes);

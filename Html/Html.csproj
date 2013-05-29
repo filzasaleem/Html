@@ -52,6 +52,10 @@
   <ItemGroup>
     <Compile Include="Abbreviation.cs" />
     <Compile Include="Address.cs" />
+    <Compile Include="Area.cs" />
+    <Compile Include="Article.cs" />
+    <Compile Include="Aside.cs" />
+    <Compile Include="Audio.cs" />
     <Compile Include="BlockQuote.cs" />
     <Compile Include="Body.cs" />
     <Compile Include="Bold.cs" />

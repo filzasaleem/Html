@@ -14,7 +14,7 @@ namespace Html
         {
             this.Add(content);
         }
-         public Bold(params Node[] nodes) :
+        public Bold(params Node[] nodes) :
             this()
         {
             this.Add(nodes);
