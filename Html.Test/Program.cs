@@ -49,8 +49,18 @@ namespace Html.Test
             document.Body.Add(new Html.Address("IMINT image Intelligence AB ", new Html.LineBreak(), "Dag Hammarskjolds vag 10C ", new Html.LineBreak(), "751 83 Uppsala, Sweden "));
             document.Body.Add(new Html.Paragraph("Mig och min familij besökt The Epcot förra sommar"));
             document.Body.Add(new Html.Aside(new Html.Paragraph("The Epcot Center is a theme park in Disney World, Florida.")));
+            document.Body.Add(new Html.Audio(new Html.Source() { Src = "sample.ogg", Type = "audio/ogg" }) { Control = "controls" });
+            //document.Head.Add(new Html.Base(){Destination = "http://www.w3schools.com/images/", Target="_blank"});
+            document.Body.Add(new Html.Emphasized("Emphasized text"),new Html.LineBreak());
+            document.Body.Add(new Html.Strong("Strong text"),new Html.LineBreak());
+            document.Body.Add(new Html.Definition("Definition term"), new Html.LineBreak());
+            document.Body.Add(new Html.Code("a piece of computer code"), new Html.LineBreak());
+            document.Body.Add(new Html.KeyBoardInput ("keyboardinput sample"), new Html.LineBreak());
+            document.Body.Add(new Html.Sample("sample output from computer code"), new Html.LineBreak());
+            document.Body.Add(new Html.Variable("variable"), new Html.LineBreak());
             string data = document.ToString();
-
+           
+            
             document.Save("test.html");
 
             System.Diagnostics.Process.Start("test.html");
