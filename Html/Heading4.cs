@@ -1,23 +1,22 @@
 ﻿using System;
-using Collection = Kean.Core.Collection;
 
 namespace Html
 {
-    public class Header1 :
-        Element 
+    public class Heading4 :
+        Element
     {
-        protected override string TagName{ get { return "h1"; } }
+        protected override string TagName { get { return "h4"; } }
         #region Constructor
-        public Header1()
+        public Heading4()
         {
             this.NoLineBreaks = true;
         }
-        public Header1(Node content) :
+        public Heading4(Node content) :
             this()
         {
             this.Add(content);
         }
-        public Header1(params Node[] nodes) :
+        public Heading4(params Node[] nodes) :
             this()
         {
             this.Add(nodes);

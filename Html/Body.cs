@@ -10,8 +10,6 @@ namespace Html
         protected override string FormatAttributes()
         {
             return base.FormatAttributes();
- ;
         }
-      
     }
 }

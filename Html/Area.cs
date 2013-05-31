@@ -5,11 +5,7 @@ namespace Html
     public class Area :
         Element
     {
-         protected override string TagName { get { return "area"; } }
-        public Area()
-        {
-            this.NoLineBreaks = true;
-        }
+        protected override string TagName { get { return "area"; } }
         public string Alternate { get; set; }
         public string Coordinate { get; set; }
         public string Destination { get; set; }
