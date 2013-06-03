@@ -51,7 +51,6 @@ namespace Html.Test
             document.Body.Add(new Html.Paragraph("Mig och min familij besökt The Epcot förra sommar"));
             document.Body.Add(new Html.Aside(new Html.Paragraph("The Epcot Center is a theme park in Disney World, Florida.")));
             document.Body.Add(new Html.Audio(new Html.Source() { Src = "sample.ogg", Type = "audio/ogg" }, new Html.Source() { Src = "sample.mp3", Type = "audio/mp3" }) { Control = "controls" });
-            //document.Head.Add(new Html.Base(){Destination = "http://www.w3schools.com/images/", Target="_blank"});
             document.Body.Add(new Html.Emphasized("Emphasized text"),new Html.LineBreak());
             document.Body.Add(new Html.Strong("Strong text"),new Html.LineBreak());
             document.Body.Add(new Html.Definition("Definition term"), new Html.LineBreak());
@@ -65,7 +64,18 @@ namespace Html.Test
             document.Body.Add(new Html.Italic("this text is in italic"));
             document.Body.Add(new Html.HorizontalRule());
             document.Body.Add(new Html.InLineFrame(new Html.Paragraph("Inline Frame")) { Source = "http://www.w3schools.com" });
-            document.Body.Add(new Html.Form(new Html.Label("Firse Name :") { For = "fname" }, new Html.Input() { Type = "text", Identifier  = "fname"}, new Html.LineBreak(), "Last Name: ", new Html.Input() { Type = "text", Name = "lname" }, new Html.LineBreak(), "Encryption: ", new Html.KeyGenerator() { Name = "security" }, new Html.LineBreak(), new Html.Input() { Type = "submit", Value = "submit" }));
+            document.Body.Add(new Html.Form(new Html.FieldSet(new Html.Legend("Form"), new Html.Label("Firse Name :") { For = "fname" }, new Html.Input() { Type = "text", Identifier  = "fname"}, new Html.LineBreak(), "Last Name: ", new Html.Input() { Type = "text", Name = "lname" }, new Html.LineBreak(), "Encryption: ", new Html.KeyGenerator() { Name = "security" }, new Html.LineBreak(), new Html.Input() { Type = "submit", Value = "submit" })));
+            document.Body.Add(new Html.Paragraph("do not forget to buy " , new Html.Mark("milk"), " today"));
+            document.Body.Add(new Html.Meter("2 out of 10") { CurrentValue = "2", Minimum = "0", Maximum = "10" });
+            document.Body.Add(new Html.NoScript("this is no script text"));
+            document.Body.Add(new Html.OredredList(new Html.ListItem("coffee"), new Html.ListItem("Tea"), new Html.ListItem("milk")) { StartValue = "50", Reversed = "reversed" });
+            document.Body.Add(new Html.Select(new Html.OptionGroup(new Html.Option("Volvo"), new Html.Option("saab")) { LabelForOption = "Swedish Cars" }));
+            document.Body.Add(new Html.PreFormattedText("this is the     preformated text"));
+           ///look for the end tag...
+            document.Body.Add(new Html.Progress("") { Value = "32", Maximum = "150" });
+            //document.Body.Add(new Html.LineBreak());
+            //look for the new line here.
+            document.Body.Add(new Html.Small("this is small text"));
             //document.Body.Add(new Html.Embedded() { Source = "hej.png" });
            
 
