@@ -2,21 +2,21 @@
 
 namespace Html
 {
-    public class PreformattedText :
+    public class UnderLine :
         Element
     {
-        protected override string TagName { get { return "pre"; } }
+        protected override string TagName { get { return "u"; } }
         #region Constructor
-        public PreformattedText()
+        public UnderLine()
         {
             this.NoLineBreaks = true;
         }
-        public PreformattedText(Node content) :
+        public UnderLine(Node content) :
             this()
         {
             this.Add(content);
         }
-        public PreformattedText(params Node[] nodes) :
+        public UnderLine(params Node[] nodes) :
             this()
         {
             this.Add(nodes);

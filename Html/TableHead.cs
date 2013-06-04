@@ -2,16 +2,17 @@
 
 namespace Html
 {
-    public class TableHead : 
+    public class TableHead :
         Element
     {
-        protected override string TagName{ get {return "th"; } }
+        protected override string TagName { get { return "thead"; } }
         #region Constructor
         public TableHead()
         {
             this.NoLineBreaks = true;
         }
-        public TableHead(Node content)
+        public TableHead(Node content) :
+            this()
         {
             this.Add(content);
         }

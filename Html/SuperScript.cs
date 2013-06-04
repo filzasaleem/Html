@@ -2,21 +2,21 @@
 
 namespace Html
 {
-    public class PreformattedText :
+    public class SuperScript :
         Element
     {
-        protected override string TagName { get { return "pre"; } }
+        protected override string TagName { get { return "sup"; } }
         #region Constructor
-        public PreformattedText()
+        public SuperScript()
         {
             this.NoLineBreaks = true;
         }
-        public PreformattedText(Node content) :
+        public SuperScript(Node content) :
             this()
         {
             this.Add(content);
         }
-        public PreformattedText(params Node[] nodes) :
+        public SuperScript(params Node[] nodes) :
             this()
         {
             this.Add(nodes);

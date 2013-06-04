@@ -2,21 +2,21 @@
 
 namespace Html
 {
-    public class PreformattedText :
+    public class Incorrect :
         Element
     {
-        protected override string TagName { get { return "pre"; } }
+        protected override string TagName { get { return "s"; } }
         #region Constructor
-        public PreformattedText()
+        public Incorrect()
         {
             this.NoLineBreaks = true;
         }
-        public PreformattedText(Node content) :
+        public Incorrect(Node content) :
             this()
         {
             this.Add(content);
         }
-        public PreformattedText(params Node[] nodes) :
+        public Incorrect(params Node[] nodes) :
             this()
         {
             this.Add(nodes);

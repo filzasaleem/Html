@@ -8,9 +8,7 @@ namespace Html
         protected override string TagName { get { return "audio"; } }
         #region Constructors
         public Audio()
-        {
-            this.NoLineBreaks = true;
-        }
+        { }
         public Audio(Node content) :
             this()
         {
@@ -22,17 +20,17 @@ namespace Html
             this.Add(nodes);
         }
         #endregion
-        public string AutoPlay { get; set; }
-        public string Control { get; set; }
-        public string Loop { get; set; }
-        public string Muted { get; set; }
+        public bool AutoPlay { get; set; }
+        public bool Controls { get; set; }
+        public bool Loop { get; set; }
+        public bool Muted { get; set; }
         public string PreLoad { get; set; }
         public string Source { get; set; }
         protected override string FormatAttributes()
         {
             return
                  this.FormatAttribute("autoplay", this.AutoPlay) +
-                 this.FormatAttribute("control", this.Control) +
+                 this.FormatAttribute("controls", this.Controls) +
                  this.FormatAttribute("loop", this.Loop) +
                  this.FormatAttribute("muted", this.Muted) +
                  this.FormatAttribute("preload", this.PreLoad) +

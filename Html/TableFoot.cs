@@ -2,21 +2,21 @@
 
 namespace Html
 {
-    public class PreformattedText :
-        Element
+    public class TableFoot :
+        Element 
     {
-        protected override string TagName { get { return "pre"; } }
+        protected override string TagName { get { return "tfoot"; } }
         #region Constructor
-        public PreformattedText()
+        public TableFoot()
         {
             this.NoLineBreaks = true;
         }
-        public PreformattedText(Node content) :
+        public TableFoot(Node content) :
             this()
         {
             this.Add(content);
         }
-        public PreformattedText(params Node[] nodes) :
+        public TableFoot(params Node[] nodes) :
             this()
         {
             this.Add(nodes);

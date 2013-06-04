@@ -128,15 +128,30 @@
     <Compile Include="Section.cs" />
     <Compile Include="Select.cs" />
     <Compile Include="Small.cs" />
-    <Compile Include="Source.cs" />
+    <Compile Include="MediaSource.cs" />
+    <Compile Include="Span.cs" />
     <Compile Include="Strong.cs" />
+    <Compile Include="Style.cs" />
+    <Compile Include="SubScript.cs" />
+    <Compile Include="Summary.cs" />
+    <Compile Include="SuperScript.cs" />
     <Compile Include="Table.cs" />
+    <Compile Include="TableBody.cs" />
     <Compile Include="TableData.cs" />
+    <Compile Include="TableFoot.cs" />
     <Compile Include="TableHead.cs" />
+    <Compile Include="TableHeading.cs" />
     <Compile Include="TableRow.cs" />
     <Compile Include="Text.cs" />
+    <Compile Include="TextArea.cs" />
+    <Compile Include="Time.cs" />
     <Compile Include="Title.cs" />
+    <Compile Include="Track.cs" />
+    <Compile Include="UnderLine.cs" />
+    <Compile Include="UnOrderedList.cs" />
     <Compile Include="Variable.cs" />
+    <Compile Include="Video.cs" />
+    <Compile Include="WordBreak.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -2,21 +2,21 @@
 
 namespace Html
 {
-    public class PreformattedText :
+    public class Span :
         Element
     {
-        protected override string TagName { get { return "pre"; } }
+        protected override string TagName { get { return "span"; } }
         #region Constructor
-        public PreformattedText()
+        public Span()
         {
             this.NoLineBreaks = true;
         }
-        public PreformattedText(Node content) :
+        public Span(Node content) :
             this()
         {
             this.Add(content);
         }
-        public PreformattedText(params Node[] nodes) :
+        public Span(params Node[] nodes) :
             this()
         {
             this.Add(nodes);

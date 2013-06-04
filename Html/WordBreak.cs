@@ -2,21 +2,21 @@
 
 namespace Html
 {
-    public class PreformattedText :
+    public class WordBreak :
         Element
     {
-        protected override string TagName { get { return "pre"; } }
+        protected override string TagName { get { return "wbr"; } }
         #region Constructor
-        public PreformattedText()
+        public WordBreak()
         {
             this.NoLineBreaks = true;
         }
-        public PreformattedText(Node content) :
+        public WordBreak(Node content) :
             this()
         {
             this.Add(content);
         }
-        public PreformattedText(params Node[] nodes) :
+        public WordBreak(params Node[] nodes) :
             this()
         {
             this.Add(nodes);

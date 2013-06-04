@@ -12,6 +12,7 @@ namespace Html
         public Progress()
         {
             this.NoLineBreaks = true;
+            this.RequiresEndTag = true;
         }
         public Progress(Node content) :
             this()

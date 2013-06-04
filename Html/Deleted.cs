@@ -4,23 +4,23 @@
 
 namespace Html
 {
-    public class delete :
+    public class Deleted :
         Element
     {
         protected override string TagName { get { return "del"; } }
         public string Cite { get; set; }         //url to the document that explain the reason why the text was deleted
         public string DateTime { get; set; }     //Specifies the date and time of when the text was deleted(YYYY-MM-DDThh:mm:ss)
         #region Constructor
-        public delete()
+        public Deleted()
         {
             this.NoLineBreaks = true;
         }
-        public delete(Node content) :
+        public Deleted(Node content) :
             this()
         {
             this.Add(content);
         }
-        public delete(params Node[] nodes) :
+        public Deleted(params Node[] nodes) :
             this()
         {
             this.Add(nodes);

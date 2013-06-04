@@ -2,22 +2,22 @@
 
 namespace Html
 {
-    public class BiDirectionalOverride :
+    public class BidirectionalOverride :
         Element
     {
         protected override string TagName { get { return "bdo"; } }
         public string Direction { get; set; }
         #region Constructor
-        public BiDirectionalOverride()
+        public BidirectionalOverride()
         {
             this.NoLineBreaks = true;
         }
-        public BiDirectionalOverride(Node content) :
+        public BidirectionalOverride(Node content) :
             this()
         {
             this.Add(content);
         }
-        public BiDirectionalOverride(params Node[] nodes) :
+        public BidirectionalOverride(params Node[] nodes) :
             this()
         {
             this.Add(nodes);

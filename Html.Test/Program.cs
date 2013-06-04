@@ -13,7 +13,7 @@ namespace Html.Test
             //document.Head.Add(title);
             Html.Body body = new Body() { Style = "color : purple" };
 
-            //document.Body
+            document.Body.Style = "background: LightGrey";
             document.Body.Add(new Html.LineBreak());
             document.Head.Add(new Html.Title("Page Title"));
             document.Body.Add(new Html.Heading1("heading 1."));
@@ -50,7 +50,7 @@ namespace Html.Test
             document.Body.Add(new Html.Address("IMINT image Intelligence AB ", new Html.LineBreak(), "Dag Hammarskjolds vag 10C ", new Html.LineBreak(), "751 83 Uppsala, Sweden "));
             document.Body.Add(new Html.Paragraph("Mig och min familij besökt The Epcot förra sommar"));
             document.Body.Add(new Html.Aside(new Html.Paragraph("The Epcot Center is a theme park in Disney World, Florida.")));
-            document.Body.Add(new Html.Audio(new Html.Source() { Src = "sample.ogg", Type = "audio/ogg" }, new Html.Source() { Src = "sample.mp3", Type = "audio/mp3" }) { Control = "controls" });
+            document.Body.Add(new Html.Audio(new Html.MediaSource() { Source = "sample.ogg", Type = "audio/ogg" }, new Html.MediaSource() { Source = "sample.mp3", Type = "audio/mpeg" }, "No supported format available.") { Controls = true });
             document.Body.Add(new Html.Emphasized("Emphasized text"),new Html.LineBreak());
             document.Body.Add(new Html.Strong("Strong text"),new Html.LineBreak());
             document.Body.Add(new Html.Definition("Definition term"), new Html.LineBreak());
@@ -59,7 +59,7 @@ namespace Html.Test
             document.Body.Add(new Html.Sample("sample output from computer code"), new Html.LineBreak());
             document.Body.Add(new Html.Variable("variable"), new Html.LineBreak());
             document.Body.Add(new Html.DescriptionList(new Html.DefineTerm("Coffee"), new Html.DescriptionData("black hot drink"), new Html.DefineTerm("Milk"), new Html.DescriptionData("white cold drink")));
-            document.Body.Add(new Html.Paragraph("my favorite color is ", new Html.delete("red") { DateTime = "2012/6/30" }, new Html.Insert("blue")));
+            document.Body.Add(new Html.Paragraph("my favorite color is ", new Html.Deleted("red") { DateTime = "2012/6/30" }, new Html.Insert("blue")));
             document.Body.Add(new Html.Division(new Html.Paragraph("this is paragraph"), new Html.Heading3("this is heading")) { Style = "color : purple" });
             document.Body.Add(new Html.Italic("this text is in italic"));
             document.Body.Add(new Html.HorizontalRule());
@@ -70,12 +70,16 @@ namespace Html.Test
             document.Body.Add(new Html.NoScript("this is no script text"));
             document.Body.Add(new Html.OredredList(new Html.ListItem("coffee"), new Html.ListItem("Tea"), new Html.ListItem("milk")) { StartValue = "50", Reversed = "reversed" });
             document.Body.Add(new Html.Select(new Html.OptionGroup(new Html.Option("Volvo"), new Html.Option("saab")) { LabelForOption = "Swedish Cars" }));
-            document.Body.Add(new Html.PreFormattedText("this is the     preformated text"));
+            document.Body.Add(new Html.PreformattedText("this is the     preformated text"));
            ///look for the end tag...
-            document.Body.Add(new Html.Progress("") { Value = "32", Maximum = "150" });
+            document.Body.Add(new Html.Progress() { Value = "32", Maximum = "150" });
             //document.Body.Add(new Html.LineBreak());
             //look for the new line here.
-            document.Body.Add(new Html.Small("this is small text"));
+            document.Body.Add(new Html.Paragraph(new Html.Small("this is small text")));
+
+            document.Body.Add(new Html.Paragraph("this text has ", new Html.SubScript("subscript"), "and aslo", new Html.SuperScript("superscript")));
+            document.Body.Add(new Html.TextArea("hello this is text area") { Row = "2", Column = "10" });
+            document.Body.Add(new Html.Paragraph("this is ", new Html.UnderLine("paragraph")));
             //document.Body.Add(new Html.Embedded() { Source = "hej.png" });
            
 
