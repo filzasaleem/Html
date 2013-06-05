@@ -35,6 +35,7 @@ namespace Html
         protected override string FormatAttributes()
         {
             return
+                 base.FormatAttributes() +
                  this.FormatAttribute("action", this.Action) +
                  this.FormatAttribute("method", this.Method) +
                  this.FormatAttribute("name", this.Name) +

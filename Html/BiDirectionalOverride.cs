@@ -25,7 +25,9 @@ namespace Html
         #endregion
         protected override string FormatAttributes()
         {
-            return this.FormatAttribute("dir", this.Direction);
+            return
+                base.FormatAttributes() +
+                this.FormatAttribute("dir", this.Direction);
                    
         } 
     }

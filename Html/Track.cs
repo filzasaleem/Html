@@ -10,10 +10,11 @@ namespace Html
         public string Kind { get; set; }
         public string TitleOfTrack { get; set; }
         public string SourceLanguage { get; set; }
-        public string Default { get; set; }
+        public bool Default { get; set; }
         protected override string FormatAttributes()
         {
-            return 
+            return
+                base.FormatAttributes() +
                 this.FormatAttribute("src", this.Source)+
                 this.FormatAttribute("kind", this.Kind)+
                 this.FormatAttribute("label", this.TitleOfTrack) +

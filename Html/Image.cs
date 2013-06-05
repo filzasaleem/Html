@@ -16,6 +16,7 @@ namespace Html
         protected override string FormatAttributes()
         {
             return
+                 base.FormatAttributes() +
                  this.FormatAttribute("src", this.Source) +
                  this.FormatAttribute("alt", this.Alternate) +
                  this.FormatAttribute("height", this.Height) +

@@ -25,7 +25,9 @@ namespace Html
         #endregion
         protected override string FormatAttributes()
         {
-            return this.FormatAttribute("border", this.Border);
+            return
+                base.FormatAttributes() + 
+                this.FormatAttribute("border", this.Border);
         }
     }
 }

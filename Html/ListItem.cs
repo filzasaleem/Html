@@ -25,7 +25,9 @@ namespace Html
         #endregion
         protected override string FormatAttributes()
         {
-            return this.FormatAttribute("value", this.Value);
+            return
+                base.FormatAttributes() + 
+                this.FormatAttribute("value", this.Value);
         }
     }
 }

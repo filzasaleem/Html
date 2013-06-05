@@ -25,7 +25,8 @@ namespace Html
         #endregion
         protected override string FormatAttributes()
         {
-            return 
+            return
+                base.FormatAttributes() +
                 this.FormatAttribute("datetime", this.DateTime);
         }
     }

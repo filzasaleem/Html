@@ -4,7 +4,7 @@
 
 namespace Html
 {
-    public class InLineFrame :
+    public class InlineFrame :
         Element
     {
         protected override string TagName { get { return "iframe"; } }
@@ -16,16 +16,16 @@ namespace Html
         public string Width { get; set; }
         public string SourceDocument { get; set; }
         #region Constructor
-        public InLineFrame()
+        public InlineFrame()
         {
             this.NoLineBreaks = true;
         }
-        public InLineFrame(Node content) :
+        public InlineFrame(Node content) :
             this()
         {
             this.Add(content);
         }
-        public InLineFrame(params Node[] nodes) :
+        public InlineFrame(params Node[] nodes) :
             this()
         {
             this.Add(nodes);
@@ -34,6 +34,7 @@ namespace Html
         protected override string FormatAttributes()
         {
             return
+                 base.FormatAttributes() +
                  this.FormatAttribute("height", this.Height) +
                  this.FormatAttribute("sandbox", this.SandBox) +
                  this.FormatAttribute("name", this.Name) +

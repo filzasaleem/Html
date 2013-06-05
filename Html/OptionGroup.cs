@@ -8,7 +8,7 @@ namespace Html
     {
         protected override string TagName { get { return "optgroup"; } }
         public string LabelForOption { get; set; }
-        public string Disabled { get; set; }
+        public bool Disabled { get; set; }
         #region Constructor
         public OptionGroup()
         {
@@ -28,6 +28,7 @@ namespace Html
         protected override string FormatAttributes()
         {
             return
+                base.FormatAttributes() +
                 this.FormatAttribute("label", this.LabelForOption) +
                 this.FormatAttribute("disabled", this.Disabled);
         }

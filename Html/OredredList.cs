@@ -6,7 +6,7 @@ namespace Html
         Element
     {
         protected override string TagName { get { return "ol"; } }
-        public string Reversed { get; set; }
+        public bool Reversed { get; set; }
         public string StartValue { get; set; }
         public string TypeOfMarker { get; set; }
         #region Constructor
@@ -27,7 +27,8 @@ namespace Html
         #endregion
         protected override string FormatAttributes()
         {
-            return 
+            return
+                base.FormatAttributes() +
                 this.FormatAttribute("reversed", this.Reversed)+
                 this.FormatAttribute("start", this.StartValue)+
                 this.FormatAttribute("type", this.TypeOfMarker);

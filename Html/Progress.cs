@@ -28,6 +28,7 @@ namespace Html
         protected override string FormatAttributes()
         {
             return
+                base.FormatAttributes() +
                 this.FormatAttribute("value", this.Value) +
                 this.FormatAttribute("max", this.Maximum);
         }

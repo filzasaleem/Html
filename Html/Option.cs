@@ -7,8 +7,8 @@ namespace Html
     {
         protected override string TagName { get { return "option"; } }
         public string LabelForOption { get; set; }
-        public string Disabled { get; set; }
-        public string Selected { get; set; }
+        public bool Disabled { get; set; }
+        public bool Selected { get; set; }
         public string Value { get; set; }
         #region Constructor
         public Option()
@@ -28,7 +28,8 @@ namespace Html
         #endregion
         protected override string FormatAttributes()
         {
-            return 
+            return
+                base.FormatAttributes() +
                 this.FormatAttribute("selected", this.Selected)+
                 this.FormatAttribute("disabled", this.Disabled)+
                 this.FormatAttribute("label", this.LabelForOption) +

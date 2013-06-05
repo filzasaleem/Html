@@ -27,6 +27,7 @@ namespace Html
         protected override string FormatAttributes()
         {
             return
+                 base.FormatAttributes() +
                  this.FormatAttribute("for", this.For) +
                  this.FormatAttribute("form", this.FormIdentifier);
         }

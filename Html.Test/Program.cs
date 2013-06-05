@@ -24,7 +24,7 @@ namespace Html.Test
             paragraph.Add(new Html.Anchor("link") {Identifier = "here", Style = "color: red", Destination = "http://imint.se" });
             paragraph.Add(new Html.Text("."));
             document.Body.Add(paragraph);
-            document.Body.Add(new Html.Button("hey click here") { Onclick = "alert('oye oye oye')" });
+            document.Body.Add(new Html.Button("hey click here") { OnClick = "alert('oye oye oye')" });
             document.Body.Add(new Html.LineBreak());
             document.Body.Add(new Html.LineBreak());
             document.Body.Add(new Html.Table(new Html.ColumnGroup(new Html.Column(){Span = "5"}),new Html.TableRow(new Html.TableData("january"), new Html.TableData("100"))) { Border = "3" });
@@ -63,12 +63,12 @@ namespace Html.Test
             document.Body.Add(new Html.Division(new Html.Paragraph("this is paragraph"), new Html.Heading3("this is heading")) { Style = "color : purple" });
             document.Body.Add(new Html.Italic("this text is in italic"));
             document.Body.Add(new Html.HorizontalRule());
-            document.Body.Add(new Html.InLineFrame(new Html.Paragraph("Inline Frame")) { Source = "http://www.w3schools.com" });
+            document.Body.Add(new Html.InlineFrame(new Html.Paragraph("Inline Frame")) { Source = "http://www.w3schools.com" });
             document.Body.Add(new Html.Form(new Html.FieldSet(new Html.Legend("Form"), new Html.Label("Firse Name :") { For = "fname" }, new Html.Input() { Type = "text", Identifier  = "fname"}, new Html.LineBreak(), "Last Name: ", new Html.Input() { Type = "text", Name = "lname" }, new Html.LineBreak(), "Encryption: ", new Html.KeyGenerator() { Name = "security" }, new Html.LineBreak(), new Html.Input() { Type = "submit", Value = "submit" })));
             document.Body.Add(new Html.Paragraph("do not forget to buy " , new Html.Mark("milk"), " today"));
             document.Body.Add(new Html.Meter("2 out of 10") { CurrentValue = "2", Minimum = "0", Maximum = "10" });
             document.Body.Add(new Html.NoScript("this is no script text"));
-            document.Body.Add(new Html.OredredList(new Html.ListItem("coffee"), new Html.ListItem("Tea"), new Html.ListItem("milk")) { StartValue = "50", Reversed = "reversed" });
+            document.Body.Add(new Html.OredredList(new Html.ListItem("coffee"), new Html.ListItem("Tea"), new Html.ListItem("milk")) { StartValue = "50", Reversed = true  });
             document.Body.Add(new Html.Select(new Html.OptionGroup(new Html.Option("Volvo"), new Html.Option("saab")) { LabelForOption = "Swedish Cars" }));
             document.Body.Add(new Html.PreformattedText("this is the     preformated text"));
            ///look for the end tag...

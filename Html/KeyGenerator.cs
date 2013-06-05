@@ -6,15 +6,16 @@ namespace Html
         Element
     {
         protected override string TagName { get { return "keygen"; } }
-        public string Challange { get; set; }
+        public bool Challange { get; set; }
         public string FormIdentifier { get; set; }
         public string Name { get; set; }
-        public string AutoFocus { get; set; }
+        public bool AutoFocus { get; set; }
         public string KeyType { get; set; }
-        public string Disabled { get; set; }
+        public bool Disabled { get; set; }
         protected override string FormatAttributes()
         {
             return
+                 base.FormatAttributes() +
                  this.FormatAttribute("challange", this.Challange) +
                  this.FormatAttribute("form", this.FormIdentifier) +
                  this.FormatAttribute("name", this.Name) +

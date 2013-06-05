@@ -6,7 +6,7 @@ namespace Html
         Element
     {
         protected override string TagName { get { return "style"; } }
-        public string Scoped { get; set; }
+        public bool Scoped { get; set; }
         public string Type { get; set; }
         public string Media { get; set; }
         #region Constructor
@@ -27,7 +27,8 @@ namespace Html
         #endregion
         protected override string FormatAttributes()
         {
-            return 
+            return
+                base.FormatAttributes() +
                 this.FormatAttribute("scoped", this.Scoped)+
                 this.FormatAttribute("media", this.Media)+
                 this.FormatAttribute("type", this.Type);

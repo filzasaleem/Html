@@ -10,7 +10,7 @@ namespace Html
         public string CharacterSet { get; set; }
         public string Type { get; set; }
         public string Asynchronously { get; set; }
-        public string Defer { get; set; }
+        public bool Defer { get; set; }
         #region Constructor
         public Script()
         {
@@ -29,7 +29,8 @@ namespace Html
         #endregion
         protected override string FormatAttributes()
         {
-            return 
+            return
+                base.FormatAttributes() +
                 this.FormatAttribute("src", this.Source)+
                 this.FormatAttribute("charset", this.CharacterSet)+
                 this.FormatAttribute("type", this.Type) +

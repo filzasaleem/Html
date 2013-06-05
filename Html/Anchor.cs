@@ -23,10 +23,9 @@ namespace Html
         #endregion
         protected override string FormatAttributes()
         {
-            string result = base.FormatAttributes();
-            if(this.Destination != null)
-                result = result + " href=\"" + this.Destination + "\"";
-            return result;
+            return
+                base.FormatAttributes() + 
+                this.FormatAttribute("href", this.Destination);
         }
     }
 }

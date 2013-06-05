@@ -11,6 +11,7 @@ namespace Html
         protected override string FormatAttributes()
         {
             return
+                 base.FormatAttributes() +
                  this.FormatAttribute("href", this.Destination) +
                  this.FormatAttribute("target", this.Target);
         }

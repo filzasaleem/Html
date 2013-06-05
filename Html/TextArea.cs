@@ -10,12 +10,12 @@ namespace Html
         public string Column { get; set; }
         public string Name { get; set; }
         public string FormIdentifier { get; set; }
-        public string Disabled { get; set; }
+        public bool Disabled { get; set; }
         public string MaximumLength { get; set; }
-        public string Required { get; set; }
-        public string ReadOnly { get; set; }
+        public bool Required { get; set; }
+        public bool ReadOnly { get; set; }
         public string Wrap { get; set; }
-        public string AutoFocus { get; set; }
+        public bool AutoFocus { get; set; }
         public string PlaceHolder { get; set; }
         #region Constructor
         public TextArea()
@@ -35,17 +35,18 @@ namespace Html
         #endregion
         protected override string FormatAttributes()
         {
-            return 
+            return
+                base.FormatAttributes() +
                 this.FormatAttribute("form", this.FormIdentifier)+
                 this.FormatAttribute("name", this.Name)+
                 this.FormatAttribute("row", this.Row)+
-                 this.FormatAttribute("col", this.Column)+
+                this.FormatAttribute("col", this.Column)+
                 this.FormatAttribute("disabled", this.Disabled)+
                 this.FormatAttribute("required", this.Required)+
-                 this.FormatAttribute("maxlength", this.MaximumLength)+
+                this.FormatAttribute("maxlength", this.MaximumLength)+
                 this.FormatAttribute("readonly", this.ReadOnly)+
                 this.FormatAttribute("wrap", this.Wrap)+
-                 this.FormatAttribute("placeholder", this.PlaceHolder)+
+                this.FormatAttribute("placeholder", this.PlaceHolder)+
                 this.FormatAttribute("autofocus", this.AutoFocus);
         }
     }

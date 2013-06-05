@@ -29,10 +29,9 @@ namespace Html
         #endregion
          protected override string FormatAttributes()
         {
-            string result =  base.FormatAttributes();
-            if (Cite != null)
-                result = result + " cite= \"" + this.Cite + "\"";
-            return result;
+            return 
+                 base.FormatAttributes()+
+                 this.FormatAttribute("cite", this.Cite);
         } 
     }
 }

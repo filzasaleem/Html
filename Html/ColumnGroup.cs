@@ -29,7 +29,9 @@ namespace Html
         #endregion
         protected override string FormatAttributes()
         {
-            return this.FormatAttribute("span", this.Span);
+            return
+                base.FormatAttributes() + 
+                this.FormatAttribute("span", this.Span);
         }
     }
 }

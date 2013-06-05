@@ -9,7 +9,7 @@ namespace Html
         Element
     {
         protected override string TagName { get { return "fieldset"; } }
-        public string Disabled { get; set; }
+        public bool Disabled { get; set; }
         public string Form { get; set; }
         public string Name { get; set; }
         #region Constructor
@@ -31,6 +31,7 @@ namespace Html
         protected override string FormatAttributes()
         {
             return
+                 base.FormatAttributes() +
                  this.FormatAttribute("disabled", this.Disabled) +
                  this.FormatAttribute("form", this.Form) +
                  this.FormatAttribute("name", this.Name);

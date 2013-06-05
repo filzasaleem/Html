@@ -17,6 +17,7 @@ namespace Html
         protected override string FormatAttributes()
         {
             return
+                 base.FormatAttributes() +
                  this.FormatAttribute("alt", this.Alternate) +
                  this.FormatAttribute("coords", this.Coordinate) +
                  this.FormatAttribute("href", this.Destination) +

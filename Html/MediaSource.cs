@@ -12,6 +12,7 @@ namespace Html
         protected override string FormatAttributes()
         {
             return
+                 base.FormatAttributes() +
                  this.FormatAttribute("media", this.Media) +
                  this.FormatAttribute("src", this.Source) +
                  this.FormatAttribute("type", this.Type);

@@ -14,6 +14,7 @@ namespace Html
         protected override string FormatAttributes()
         {
             return
+                 base.FormatAttributes() +
                  this.FormatAttribute("name", this.Name) +
                  this.FormatAttribute("content", this.Content) +
                  this.FormatAttribute("charset", this.CharacterSet) +

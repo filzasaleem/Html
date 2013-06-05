@@ -8,7 +8,9 @@ namespace Html
         protected override string TagName { get { return "audio"; } }
         #region Constructors
         public Audio()
-        { }
+        {
+            this.NoLineBreaks = true;
+        }
         public Audio(Node content) :
             this()
         {
@@ -29,6 +31,7 @@ namespace Html
         protected override string FormatAttributes()
         {
             return
+                 base.FormatAttributes() +
                  this.FormatAttribute("autoplay", this.AutoPlay) +
                  this.FormatAttribute("controls", this.Controls) +
                  this.FormatAttribute("loop", this.Loop) +

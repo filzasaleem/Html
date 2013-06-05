@@ -33,7 +33,8 @@ namespace Html
         #endregion
         protected override string FormatAttributes()
         {
-            return 
+            return
+                base.FormatAttributes() +
                 this.FormatAttribute("form", this.FormIdentifier)+
                 this.FormatAttribute("value", this.CurrentValue)+
                 this.FormatAttribute("min", this.Minimum)+

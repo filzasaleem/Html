@@ -6,12 +6,12 @@ namespace Html
         Element
     {
         protected override string TagName { get { return "select"; } }
-        public string AutoFocus { get; set; }
-        public string Disabled { get; set; }
-        public string MultipleOption { get; set; }
+        public bool AutoFocus { get; set; }
+        public bool Disabled { get; set; }
+        public bool MultipleOption { get; set; }
         public string FormIdentifier { get; set; }
         public string NameOfList { get; set; }
-        public string Required { get; set; }
+        public bool Required { get; set; }
         public string Size { get; set; }
         #region Constructor
         public Select()
@@ -31,7 +31,8 @@ namespace Html
         #endregion
         protected override string FormatAttributes()
         {
-            return 
+            return
+                base.FormatAttributes() +
                 this.FormatAttribute("form", this.FormIdentifier)+
                 this.FormatAttribute("disabled", this.Disabled)+
                 this.FormatAttribute("required", this.Required)+

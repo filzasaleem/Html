@@ -12,9 +12,10 @@ namespace Html
         public string Accept { get; set; }
         public string Alternate { get; set; }
         public string AutoComplete { get; set; }
-        public string AutoFocus { get; set; }
-        public string Checked { get; set; }
-        public string Disabled { get; set; }
+        public bool AutoFocus { get; set; }
+        public bool Checked { get; set; }
+        public bool Disabled { get; set; }
+        public bool ReadOnly { get; set; }
         public string FormIdentifier { get; set; }
         public string FormAction { get; set; }
         public string FormEncodedType { get; set; }
@@ -32,13 +33,14 @@ namespace Html
         public string Source { get; set; }
         public string Size { get; set; }
         public string Step { get; set; }
-        public string Required { get; set; }
+        public bool Required { get; set; }
         public string Multiple { get; set; }
         public string PlaceHolder { get; set; }
         public string Pattern { get; set; }
         protected override string FormatAttributes()
         {
             return
+                 base.FormatAttributes() +
                  this.FormatAttribute("accept", this.Accept) +
                  this.FormatAttribute("alt", this.Alternate) +
                  this.FormatAttribute("name", this.Name) +
@@ -46,6 +48,7 @@ namespace Html
                  this.FormatAttribute("autofocus", this.AutoFocus) +
                  this.FormatAttribute("checked", this.Checked) +
                  this.FormatAttribute("disabled", this.Disabled) +
+                 this.FormatAttribute("readonly", this.ReadOnly) +
                  this.FormatAttribute("form", this.FormIdentifier)+
                  this.FormatAttribute("formaction", this.FormAction) +
                  this.FormatAttribute("formenctype", this.FormEncodedType) +
